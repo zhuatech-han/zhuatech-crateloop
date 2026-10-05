@@ -1,0 +1,3 @@
+# CrateLoop project conventions
+
+Read README and docs before edits. Preserve the noncommercial license and verified ZhuaTech brand assets. Java21/SpringBoot, Vue3/MySQL8.4/Flyway. Integer quantity pools; every movement must conserve the pool and match partner and pending-document balances. Bound partners override ALL roles. Separate requesters, approvers, handoff signers and quality inspectors. Append immutable ledgers and preserve cancellation/dispute evidence. Never expose pool-wide balances to bound partners. Never log credentials or rewrite executed migrations. Run all README validation gates and inspect the diff before publishing. Commercial contact: https://www.zhuatech.cn/ · WeChat zhuatech / zhuatech2.

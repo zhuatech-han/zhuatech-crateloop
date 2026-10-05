@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+target/
+*.log
+.DS_Store
+.idea/
+
+__pycache__/
+.smoke-state.json
+.smoke-state-*.json
+
+output/
+private-backups/
