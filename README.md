@@ -1,3 +1,5 @@
+[中文](README.md) | [English](README.en.md)
+
 <img src="frontend/public/brand/logo.jpg" height="48" alt="知华科技 ZhuaTech">
 
 # CrateLoop · 知华周转箱与托盘往来台账
@@ -7,6 +9,8 @@
 **0.1.0 · 公开源码学习版／非商业源码版。未经书面授权不得商用。** 自有代码适用 [LICENSE](LICENSE)；第三方组件和素材保持其原有许可，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 ## 一只周转箱，从发出到回库
+
+系统采用 Java 21／Spring Boot、Vue 3、MySQL 和 Flyway，提供数量守恒、伙伴数据隔离、器具交接与独立质检流程。
 
 配送仓库、制造企业的周转协调人员，需要知道器具现在在哪个环节、由哪位伙伴保管，以及短缺有没有处理。CrateLoop 管理组织自有的**数量型、非逐件编号**周转箱、托盘和料箱。每个资产池归属一个部门和一种器具类型，每张交接单只对应一个池、一位伙伴和整数数量。
 
@@ -56,17 +60,25 @@
 | --- | --- |
 | ![登录](docs/screenshots/login.png) | ![伙伴业务端首页](docs/screenshots/partner-home.png) |
 
+登录：会话认证。伙伴业务端：首页只显示本伙伴的保管和归还预留余额。
+
 | 交接证据与数量 | 资产池与伙伴子账 |
 | --- | --- |
 | ![交接详情](docs/screenshots/handoff.png) | ![资产池](docs/screenshots/pool.png) |
+
+交接详情：查看签收、短缺和质检证据。资产池：核对授权桶量与伙伴子账。
 
 | 后台账号管理 | 数量统计 |
 | --- | --- |
 | ![后台账号](docs/screenshots/users.png) | ![数量统计](docs/screenshots/dashboard.png) |
 
+账号管理：维护部门、角色和伙伴绑定。数量统计：汇总当前授权范围的单据状态与器具数量。
+
 | 角色权限 | 系统设置 |
 | --- | --- |
 | ![角色权限](docs/screenshots/roles.png) | ![系统参数](docs/screenshots/settings.png) |
+
+角色权限：维护注册接口权限与数据范围。系统参数：配置工作空间名称和允许的资源容量。
 
 ## 部署与数据库
 
@@ -93,10 +105,11 @@ compose.yaml              隔离数据库、后端和前端
 
 ### 一键启动
 
-在项目根目录运行，需 Docker Desktop／Docker Engine 与 Compose v2，构建需连接依赖和官方镜像源：
+在项目根目录运行，需 Python 3.10+、Docker Desktop／Docker Engine 与 Compose v2，构建需连接依赖和官方镜像源：
 
 ```sh
 python3 scripts/init-env.py
+docker compose -p crateloop config --quiet
 docker compose -p crateloop up -d --build --wait
 ```
 
@@ -171,6 +184,10 @@ python3 scripts/smoke.py --verify
 
 源码仅供学习、研究和非商业交流，不能据此认定器具实际所在、财产权属、运输交付或财务责任。组织须自行核实台账证据、数据准确性、物理安全和部署配置。自有源码授权见 LICENSE，第三方许可独立适用。
 
+## 授权说明
+
+自有代码使用 [ZhuaTech Non-Commercial Source License 1.0](LICENSE)，仅限个人学习、技术研究与非商业交流。未经上海如静知华信息科技有限公司书面授权不得商用；企业私有化部署、收费交付与服务、SaaS 运营、转售及深度定制须另行授权。保留署名、官网、版权、许可证及授权联系方式；第三方依赖保持原许可。本项目属于“源码公开、非商业使用”，并非 OSI 标准开源许可，软件按现状提供，不宣称未经验证的生产可用性。
+
 ## 联系知华科技
 
 本项目由知华科技（上海如静知华信息科技有限公司）提供公开源码学习版本，主要用于个人学习、技术研究与非商业交流。未经书面授权不得商用。企业信息化建设、中小企业数字化转型、中小企业 AI 转型、私有化部署、软件外包、软件项目外包、软件实施、FDE 外包、OPC 技术支持及深度定制开发，请访问知华科技官网 https://www.zhuatech.cn/，或添加微信 zhuatech、zhuatech2 咨询。
@@ -180,3 +197,5 @@ python3 scripts/smoke.py --verify
 | 微信 zhuatech | 微信 zhuatech2 |
 | --- | --- |
 | ![微信 zhuatech](docs/images/wechat-zhuatech.png) | ![微信 zhuatech2](docs/images/wechat-zhuatech2.png) |
+
+商业授权或深度定制开发请联系知华科技。
